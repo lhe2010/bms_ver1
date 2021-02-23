@@ -1,0 +1,22 @@
+*안 배운 문법
+
+1) select key
+
+
+2) nextval , dual
+
+ mysql의 autoincrement와 같은 역할
+
+3) keyproperty order
+
+4) t.*
+
+5) to_c
+
+6) <where>
+
+7) <set>
+
+8) foreach
+
+9) nvl
