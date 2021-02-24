@@ -30,7 +30,6 @@ public class MainController extends BaseController {
 		return new ModelAndView("/main/main");
 	}
 	
-	
 	@RequestMapping(value= "/main/main.do")
 	public ModelAndView main(HttpServletRequest request) throws Exception{
 		
@@ -44,6 +43,5 @@ public class MainController extends BaseController {
 		mv.addObject("goodsMap", goodsMap);
 		
 		return mv;
-		
 	}
 }

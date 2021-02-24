@@ -32,12 +32,12 @@ public abstract class BaseController  {
 	
 	protected List<ImageFileVO> upload(MultipartHttpServletRequest multipartRequest) throws Exception{
 		
-		List<ImageFileVO> fileList= new ArrayList<ImageFileVO>();
+		List<ImageFileVO> fileList = new ArrayList<ImageFileVO>();
 		Iterator<String> fileNames = multipartRequest.getFileNames();
 		
 		while (fileNames.hasNext()) {
 			
-			ImageFileVO imageFileVO =new ImageFileVO();
+			ImageFileVO imageFileVO = new ImageFileVO();
 			String fileName = fileNames.next();
 			imageFileVO.setFileType(fileName);
 			
@@ -57,9 +57,7 @@ public abstract class BaseController  {
 			}
 		}
 		return fileList;
-		
 	}
-	
 	
 	private void deleteFile(String fileName) {
 		File file =new File(CURR_IMAGE_REPO_PATH + "\\" + fileName);
@@ -70,14 +68,12 @@ public abstract class BaseController  {
 		}
 	}
 	
-	
 //	@RequestMapping(value="/*.do" ,method={RequestMethod.POST,RequestMethod.GET})
 //	protected  ModelAndView viewForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
 //		String viewName=(String)request.getAttribute("viewName");
 //		ModelAndView mav = new ModelAndView(viewName);
 //		return mav;
 //	}
-//	
 	
 	protected String calcSearchPeriod(String fixedSearchPeriod) {
 		
@@ -112,7 +108,5 @@ public abstract class BaseController  {
 		beginDate   = beginYear +"-"+ beginMonth +"-"+beginDay;
 		
 		return beginDate + "," + endDate;
-		
 	}
-	
 }
