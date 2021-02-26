@@ -87,7 +87,6 @@
 		          }
 		          else {
 		          	alert("사용할 수 없는 ID입니다.");
-		          	$("#member_id").css("background-color" , "red");
 		          }
 		       },
 		       error:function(data,textStatus){

@@ -48,8 +48,7 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 			
 			if (action!=null && action.equals("/order/orderEachGoods.do")){ 
 				mv.setViewName("forward:"+action);
-			}
-			else{
+			} else{
 				mv.setViewName("redirect:/main/main.do");	
 			}
 		}
@@ -73,13 +72,10 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 		return mav;
 	}
 	
-	
-	
 	@Override
-	@RequestMapping(value="/addMember.do" ,method = RequestMethod.POST)
+	@RequestMapping(value="/addMember.do", method = RequestMethod.POST)
 	public ResponseEntity addMember(@ModelAttribute("memberVO") MemberVO memberVO,
 			                HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
 		
 		if (memberVO.getEmailsts_yn() == null)  memberVO.setEmailsts_yn("N");
 		if (memberVO.getSmssts_yn() == null)    memberVO.setSmssts_yn("N");
@@ -93,11 +89,11 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 		try {
 		    memberService.addMember(memberVO);
 		    message  = "<script>";
-		    message +=" alert('회원가입되었습니다.');";
+		    message += " alert('회원가입되었습니다.');";
 		    message += " location.href='"+request.getContextPath()+"/member/loginForm.do';";
 		    message += " </script>";
 		    
-		}catch(Exception e) {
+		} catch(Exception e) {
 			message  = "<script>";
 		    message +=" alert('회원가입에 실패하였습니다.');";
 		    message += " location.href='"+request.getContextPath()+"/member/memberForm.do';";

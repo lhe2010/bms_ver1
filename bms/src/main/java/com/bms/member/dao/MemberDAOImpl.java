@@ -10,23 +10,23 @@ import org.springframework.stereotype.Repository;
 import com.bms.member.vo.MemberVO;
 
 @Repository("memberDAO")
-public class MemberDAOImpl  implements MemberDAO{
+public class MemberDAOImpl  implements MemberDAO {
 	@Autowired
 	private SqlSession sqlSession;	
 	
 	@Override
 	public MemberVO login(Map loginMap) throws DataAccessException{
-	   return sqlSession.selectOne("mapper.member.login",loginMap);
+	   return sqlSession.selectOne("mapper.member.login", loginMap);
 	}
 	
 	@Override
 	public void insertNewMember(MemberVO memberVO) throws DataAccessException{
-		sqlSession.insert("mapper.member.insertNewMember",memberVO);
+		sqlSession.insert("mapper.member.insertNewMember", memberVO);
 	}
 
 	@Override
 	public String selectOverlappedID(String id) throws DataAccessException {
-		return sqlSession.selectOne("mapper.member.selectOverlappedID",id);
+		return sqlSession.selectOne("mapper.member.selectOverlappedID", id);
 	}
 	
 	
